@@ -9,7 +9,7 @@ function App() {
   const [message, setMessage] = useState('');
   const [searchId, setSearchId] = useState('');
 
-  const API_BASE = 'http://localhost:4001/users';
+  const API_BASE = import.meta.env.VITE_API_URL;
 
   const fetchUsers = async () => {
     try {
@@ -197,7 +197,7 @@ function App() {
               users.map((user) => (
                 <tr key={user.id}>
                   <td>{user.id}</td>
-                  <td>{user.name}</td>
+                  <td>{user.first_name}</td>
                   <td>{user.last_name}</td>
                   <td>{user.age}</td>
                   <td>
